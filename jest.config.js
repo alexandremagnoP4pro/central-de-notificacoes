@@ -1,9 +1,9 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils')
-const { compilerOptions } = require('./tsconfig.json')
 /*
  * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/en/configuration.html
+ * https://jestjs.io/docs/configuration
  */
+const { pathsToModuleNameMapper } = require('ts-jest/utils')
+const { compilerOptions } = require('./tsconfig.json')
 
 module.exports = {
     // All imported modules in your tests should be mocked automatically
@@ -22,10 +22,10 @@ module.exports = {
     collectCoverage: true,
 
     // An array of glob patterns indicating a set of files for which coverage information should be collected
-    collectCoverageFrom: ['<rootDir>/tests/*.ts'],
+    collectCoverageFrom: ['<rootDir>/src/modules/**/*.ts'],
 
     // The directory where Jest should output its coverage files
-    coverageDirectory: 'coverage',
+    coverageDirectory: "coverage",
 
     // An array of regexp pattern strings used to skip coverage collection
     // coveragePathIgnorePatterns: [
@@ -73,10 +73,10 @@ module.exports = {
     // An array of file extensions your modules use
     // moduleFileExtensions: [
     //   "js",
-    //   "json",
     //   "jsx",
     //   "ts",
     //   "tsx",
+    //   "json",
     //   "node"
     // ],
 
@@ -93,7 +93,7 @@ module.exports = {
     // notifyMode: "failure-change",
 
     // A preset that is used as a base for Jest's configuration
-    preset: 'ts-jest',
+    //preset: 'ts-jest',
 
     // Run tests from one or more projects
     // projects: undefined,
@@ -128,7 +128,7 @@ module.exports = {
     // setupFiles: [],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    //setupFilesAfterEnv: ['./jest.setup-file.ts'],
+    // setupFilesAfterEnv: [],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,
@@ -162,7 +162,7 @@ module.exports = {
     // testResultsProcessor: undefined,
 
     // This option allows use of a custom test runner
-    // testRunner: "jasmine2",
+    // testRunner: "jest-circus/runner",
 
     // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
     // testURL: "http://localhost",
